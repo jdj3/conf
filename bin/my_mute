@@ -1,0 +1,8 @@
+#!/bin/bash
+
+amixer -q set Master toggle
+RET=`amixer get Master | grep -e "\[off\]"`
+echo $RET
+if [ "x$RET" == "x" ]; then
+   amixer -q set Headphone toggle
+fi

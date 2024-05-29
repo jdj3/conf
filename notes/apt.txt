@@ -1,0 +1,12 @@
+# server
+curl emacs-nox net-tools openssh-server rlwrap tree
+
+# desktop
+curl emacs i3 net-tools rlwrap tree virt-manager
+
+# extra
+build-essential openjdk-17-jdk wireshark
+
+# keyboard
+/etc/default/keyboard: XKBOPTIONS="ctrl:nocaps" 
+dpkg-reconfigure keyboard-configuration

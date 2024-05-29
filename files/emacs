@@ -1,0 +1,29 @@
+(global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-n") 'make-frame-command)
+
+(add-to-list 'default-frame-alist '(height . 48))
+(add-to-list 'default-frame-alist '(width . 82))
+(add-to-list 'default-frame-alist '(background-color . "gray65"))
+
+(c-add-style "mybsd"
+             '("bsd"
+               (c-hanging-braces-alist
+                (block-close . c-snug-do-while))))
+
+(setq backup-directory-alist '(("" . "~/.emacs-backup")))
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      kept-new-versions 5 
+      auto-save-default t               ; auto-save every buffer that visits a file
+      )
+
+(setq column-number-mode t)
+(custom-set-faces
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 113 :width normal)))))
+
+(setq c-default-style "mybsd"
+      c-basic-offset 4)
+(setq-default indent-tabs-mode nil)
+(add-hook 'c-mode-common-hook '(lambda () (c-toggle-auto-state 1)))
